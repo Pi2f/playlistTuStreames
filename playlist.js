@@ -40,7 +40,7 @@ const playlistSchema = new mongoose.Schema({
 });
 
 playlistSchema.pre('remove', function () {
-    var playlist = this;
+    const playlist = this;
     playlistModel.updateOne(playlist,
         {
             isActive: false 
@@ -51,7 +51,7 @@ playlistSchema.pre('remove', function () {
 });
 
 playlistSchema.pre('find', function (next) {
-    var query = this;
+    const query = this;
     query.where({isActive: true});
     next();
 });

@@ -2,7 +2,7 @@
   "name": "playlist-tustreames",
   "version": "1.0.0",
   "description": "",
-  "main": "playlist.js",
+  "main": "",
   "scripts": {
     "start": "node server.js"
   },
