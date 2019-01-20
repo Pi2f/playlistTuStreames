@@ -73,6 +73,13 @@ module.exports = {
         });
     },
 
+    get: function(id, cb){
+        playlistModel.findOne({_playlistID: id}, function(err, playlist) {
+            if(err) cb(err);
+            else cb(null, playlist)
+        });
+    },
+
     getByUserId: function(id, cb){
         playlistModel.find({userID: id}, function(err, playlists) {
             if(err) cb(err);

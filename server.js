@@ -28,10 +28,17 @@ app.post('/playlist', function(req,res) {
   });
 });
 
-app.get('/playlist/:id', function(req, res) {  
+app.get('/playlists/user/:id', function(req, res) {  
   playlist.getByUserId(req.params.id, function(err, playlists){
       if(err) res.status(500).send(err);
       else res.status(200).send(JSON.stringify(playlists));
+  });
+});
+
+app.get('/playlist/:id', function(req, res) {  
+  playlist.get(req.params.id, function(err, playlist){
+      if(err) res.status(500).send(err);
+      else res.status(200).send(JSON.stringify(playlist));
   });
 });
 
